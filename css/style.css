@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:#fff;
+}
+
+/* HEADER */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+}
+
+.logo img{
+    width:180px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
+}
+
+header ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+header ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+header ul li a:hover{
+    color:#ffcccc;
+}
+
+/* HERO SECTION */
+
+main{
+    position:relative;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* VIDEO */
+
+.bg-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* OVERLAY */
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:-1;
+}
+
+/* HEADING */
+
+main p{
+    color:white;
+    font-size:3.5rem;
+    font-weight:700;
+    max-width:900px;
+    margin-bottom:30px;
+    animation:fadeUp 1.5s ease;
+}
+
+/* SEARCH BAR */
+
+main input{
+    width:700px;
+    max-width:90%;
+    padding:18px 25px;
+
+    border:none;
+    border-radius:15px;
+
+    font-size:18px;
+    outline:none;
+
+    backdrop-filter:blur(10px);
+
+    background:rgba(255,255,255,0.9);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.3);
+
+    transition:0.4s;
+}
+
+main input:focus{
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 25px rgba(255,76,76,0.8);
+}
+
+/* FOOTER */
+
+footer{
+    background:#e23744;
+    color:white;
+    text-align:center;
+    padding:15px;
+    font-size:15px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    header ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    main p{
+        font-size:2rem;
+        padding:0 20px;
+    }
+
+    .logo img{
+        width:140px;
+    }
+
+    main input{
+        width:90%;
+    }
+}
